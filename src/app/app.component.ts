@@ -3,23 +3,23 @@ import { Gantt } from '@syncfusion/ej2-gantt';
 
 @Component({
     selector: 'app-root',
-    template:
-       `<ejs-gantt id="ganttDefault" height="430px" [dataSource]="data" [taskFields]="taskSettings"></ejs-gantt>`,
+    templateUrl:'./app.component.html',
     encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
   // Data for Gantt
   public data: object[];
   public taskSettings: object;
+  public columns: object[];
   public ngOnInit(): void {
       this.data =  [
           {
-              TaskID: 1,
+              TaskID: '',
               TaskName: 'Project Initiation',
-              StartDate: new Date('04/02/2018'),
+              StartDate: new Date('04/02/2019'),
               EndDate: new Date('04/21/2019'),
               subtasks: [
-                  {  TaskID: 2, TaskName: 'Identify Site location', StartDate: new Date('04/02/2018'), Duration: 4, Progress: 50 },
+                  {  TaskID: 2, TaskName: 'Identify Site location', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50 },
                   { TaskID: 3, TaskName: 'Perform Soil test', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50  },
                   { TaskID: 4, TaskName: 'Soil test approval', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50 },
               ]
@@ -46,5 +46,6 @@ export class AppComponent implements OnInit {
           dependency: 'Predecessor',
           child: 'subtasks'
       };
+      this.columns = [{ field: 'TaskName', headerText: 'Task Name' },]
   }
 }
