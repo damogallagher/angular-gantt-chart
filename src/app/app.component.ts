@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Gantt } from '@syncfusion/ej2-gantt';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    template:
+       `<ejs-gantt id="ganttDefault" height="430px" [dataSource]="data" [taskFields]="taskSettings"></ejs-gantt>`,
+    encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
   // Data for Gantt
@@ -14,10 +16,10 @@ export class AppComponent implements OnInit {
           {
               TaskID: 1,
               TaskName: 'Project Initiation',
-              StartDate: new Date('04/02/2019'),
+              StartDate: new Date('04/02/2018'),
               EndDate: new Date('04/21/2019'),
               subtasks: [
-                  {  TaskID: 2, TaskName: 'Identify Site location', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50 },
+                  {  TaskID: 2, TaskName: 'Identify Site location', StartDate: new Date('04/02/2018'), Duration: 4, Progress: 50 },
                   { TaskID: 3, TaskName: 'Perform Soil test', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50  },
                   { TaskID: 4, TaskName: 'Soil test approval', StartDate: new Date('04/02/2019'), Duration: 4, Progress: 50 },
               ]
@@ -35,7 +37,7 @@ export class AppComponent implements OnInit {
           },
       ];
       this.taskSettings = {
-          id: 'taskId',
+          id: 'TaskID',
           name: 'TaskName',
           startDate: 'StartDate',
           endDate: 'EndDate',
