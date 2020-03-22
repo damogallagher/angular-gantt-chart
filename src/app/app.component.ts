@@ -12,29 +12,26 @@ export class AppComponent implements OnInit {
   public taskSettings: object;
   public columns: object[];
   public ngOnInit(): void {
+
+
       this.data =  [
           {
               TaskID: '',
               TaskName: 'Project Initiation',
-              StartDate: new Date('04/02/2019'),
-              EndDate: new Date('04/21/2019')
+              StartDate: new Date('03/10/2020'),
+              Duration: 2.2
           },
           {
               TaskID: 5,
               TaskName: 'Project Estimation',
-              StartDate: new Date('04/02/2019'),
-              EndDate: new Date('04/21/2019')
-              /*subtasks: [
-                  { TaskID: 6, TaskName: 'Develop floor plan for estimation', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50 },
-                  { TaskID: 7, TaskName: 'List materials', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50 },
-                  { TaskID: 8, TaskName: 'Estimation approval', StartDate: new Date('04/04/2019'), Duration: 3, Progress: 50 }
-              ]*/
+              StartDate: new Date('3/16/2020'),
+              EndDate: new Date('3/18/2020')
           },
           {
             TaskID: '',
             TaskName: 'Project Completion',
-            StartDate: new Date('03/03/2019'),
-            EndDate: new Date('05/05/2019')
+            StartDate: new Date('03/18/2020'),
+            EndDate: new Date('03/31/2020')
         },
       ];
       this.taskSettings = {
